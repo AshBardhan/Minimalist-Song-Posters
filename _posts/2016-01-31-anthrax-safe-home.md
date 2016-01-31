@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Safe home"
 date:   2016-01-31 12:29:27 +0530
 categories: jekyll update
 ---
