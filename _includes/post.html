@@ -1,0 +1,31 @@
+<div class="post">
+
+	{% assign author = site.authors[include.post.authorslug] %}
+	{% if author == null %}
+		{% assign author = include.post.author %}
+	{% endif %}
+
+	<div class="post-content-wrap">
+		<article class="post-content text-big post-content--blog">
+			<header class="post-header">
+				<p class="post-meta">{{ include.post.date | date: "%b %-d, %Y" }}{% if author != null %} • <a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a>{% endif %}{% if include.post.meta %} • {{ include.post.meta }}{% endif %}</p>
+			</header>
+			{{ include.post.content }}
+ 		</article>
+		<div class="post-content__image"></div>
+	</div>
+
+	<div class="nav-btns">
+		<a href="{{ include.post.previous.url | prepend: site.baseurl }}" class="btn {% if include.post.previous == nil %}disabled{% endif %}"><</a>
+		<a href="{{ include.post.next.url | prepend: site.baseurl }}" class="btn {% if include.post.next == nil %}disabled{% endif %}">></a>
+	</div>
+
+	<script>
+	window.urls = {
+		previous: '{{ include.post.previous.url | prepend: site.baseurl }}',
+		next: '{{ include.post.next.url | prepend: site.baseurl }}'
+	};
+	var link = document.querySelector('#js-post-tweet-link');
+	link.href = link.href.replace(/%3C\/*p%3E/g, '');
+	</script>
+</div>
