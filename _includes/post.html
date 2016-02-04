@@ -15,10 +15,8 @@
 		<div class="post-content__image"></div>
 	</div>
 
-	<div class="nav-btns">
-		<a href="{{ include.post.previous.url | prepend: site.baseurl }}" class="btn {% if include.post.previous == nil %}disabled{% endif %}"><</a>
-		<a href="{{ include.post.next.url | prepend: site.baseurl }}" class="btn {% if include.post.next == nil %}disabled{% endif %}">></a>
-	</div>
+	<a class="nav-btns  nav-btns--left  {% if include.post.previous == nil %}disabled{% endif %}" href="{{ include.post.previous.url | prepend: site.baseurl }}"><</a>
+	<a class="nav-btns  nav-btns--right  {% if include.post.next == nil %}disabled{% endif %}" href="{{ include.post.next.url | prepend: site.baseurl }}">></a>
 
 	<script>
 	window.urls = {

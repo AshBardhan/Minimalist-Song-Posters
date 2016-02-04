@@ -255,10 +255,28 @@
 }
 
 .nav-btns {
-	text-align: center;
 	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	margin: $spacing-unit/2 0;
+	top: calc(50% - 50px);
+	font-weight: bold;
+	font-size: 60px;
+	color: #ababab !important;
+	line-height: 50px;
+	opacity: 0.6;
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		opacity: 0.2;
+	}
+}
+
+.nav-btns--left {
+	left: 5%;
+}
+
+.nav-btns--right {
+	right: 5%;
 }
