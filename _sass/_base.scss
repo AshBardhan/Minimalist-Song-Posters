@@ -177,3 +177,10 @@ pre {
 		}
 	}
 }
+
+/**
+ * Universal Box-sizing fix
+ */
+*, *:before, *:after {
+	box-sizing: border-box;
+}

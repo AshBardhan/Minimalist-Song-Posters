@@ -24,10 +24,11 @@ $header-color: $background-color;
 $header-background: $grey-color-dark;
 
 // Width of the content area
-$content-width: 800px;
+$content-width: 1000px;
+$content-min-width: 400px;
 
 $on-palm: 600px;
-$on-laptop: 800px;
+$on-laptop: 1000px;
 
 // Use media queries like this:
 // @include media-query($on-palm) {

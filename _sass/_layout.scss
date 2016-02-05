@@ -4,7 +4,6 @@
 .site-header {
 	background: $header-background;
 	color: $header-color !important;
-	border-bottom: 1px solid $grey-color-light;
 	min-height: 56px;
 
 	// Positioning context for the mobile navigation icon
@@ -30,7 +29,7 @@
 	}
 
 	.page-link {
-		color: $text-color;
+		color: $header-color;
 		line-height: $base-line-height;
 
 		// Gaps between nav items, but not on the last one
@@ -80,11 +79,12 @@
 		.page-link {
 			display: block;
 			padding: 5px 10px;
+			margin-left: 20px;
+			color: $text-color;
 
 			&:not(:last-child) {
 				margin-right: 0;
 			}
-			margin-left: 20px;
 		}
 	}
 }
