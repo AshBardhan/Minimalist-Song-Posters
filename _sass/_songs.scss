@@ -2,25 +2,20 @@
  *  Alice in chains - Man in the box CSS
  */
 
-.wrap {
-	perspective: 800px;
-	perspective-origin: 50% 100px;
-}
-
 .cube {
 	position: relative;
 	width: 200px;
 	transform-style: preserve-3d;
-	left: 50%;
-
+	left: calc(50% - 100px);
+	transform: rotateX(-15deg) rotateY(-45deg);
 }
 
 .cube div {
 	position: absolute;
 	width: 200px;
 	height: 200px;
-	background: rgba(255,255,255,0.1);
-	box-shadow: inset 0 0 30px rgba(125,125,125,0.8);
+	background: #e1875f;
+	box-shadow: inset 0 0 30px #a56b3e;
 	font-size: 20px;
 	text-align: center;
 	line-height: 200px;
@@ -55,8 +50,4 @@
 @keyframes spin {
 	from { transform: rotateY(0); }
 	to { transform: rotateY(360deg); }
-}
-
-.cube {
-	animation: spin 5s infinite linear;
 }
