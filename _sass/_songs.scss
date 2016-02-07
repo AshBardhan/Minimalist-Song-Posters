@@ -1,16 +1,34 @@
+.post-song__heading {
+	text-align: center;
+	font-weight: bold;
+}
+
+.post-song__content {
+	text-align: center;
+	padding: 20px 0;
+}
+
 /**
  *  Alice in chains - Man in the box CSS
  */
 
-$cube-size: 250px;
+$cube-size: 280px;
 $cube-tape-size: 50px;
+
+$cube-color: #C7A172;
 $cube-tape-color: #A28661;
 
+.cube--wrap {
+	height: $cube-size;
+	box-sizing: content-box;
+	padding: $cube-size / 4;
+}
+
 .cube {
-	position: relative;
 	width: $cube-size;
+	margin: 0 auto;
+	position: relative;
 	transform-style: preserve-3d;
-	left: calc(50% - #{$cube-size}/2);
 	transform: rotateX(-15deg) rotateY(-45deg);
 }
 
@@ -18,13 +36,13 @@ $cube-tape-color: #A28661;
 	position: absolute;
 	width: $cube-size;
 	height: $cube-size;
-	background: #C7A172;
+	background: $cube-color;
 	//box-shadow: inset 5px 5px 50px #d4ba76;
 	border: 2px solid #B5926D;
 	color: #666;
 	font-family: Impact;
-	font-size: 30px;
-	letter-spacing: 2px;
+	font-size: 24px;
+	letter-spacing: 1px;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -45,6 +63,7 @@ $cube-tape-color: #A28661;
 		left: calc(50% - 25px);
 		top: 0;
 		background: $cube-tape-color;
+		opacity: 0.8;
 	}
 }
 
@@ -62,9 +81,10 @@ $cube-tape-color: #A28661;
 		position: absolute;
 		width: 100%;
 		height: $cube-tape-size;
-		top: calc(50% -  #{$cube-tape-size}/2);
+		top: calc(50% - #{$cube-tape-size} / 2);
 		left: 0;
 		background: $cube-tape-color;
+		opacity: 0.8;
 	}
 
 	&:after {
@@ -79,7 +99,7 @@ $cube-tape-color: #A28661;
 
 .front {
 	transform: translateZ($cube-size / 2);
-	padding-top: 200px;
+	padding-top: 80px;
 
 	&:before {
 		content: "";
@@ -89,6 +109,7 @@ $cube-tape-color: #A28661;
 		left: calc(50% - 25px);
 		top: 0;
 		background: $cube-tape-color;
+		opacity: 0.8;
 	}
 }
 
@@ -112,5 +133,45 @@ $cube-tape-color: #A28661;
 		border-bottom: 10px solid;
 		border-left: 10px solid transparent;
 		border-right: 10px solid transparent;
+	}
+}
+
+.caution-box {
+	margin: 0 10px;
+	border: 2px solid;
+	border-radius: 2px;
+	text-align: center;
+	font-size: 21px;
+	position: relative;
+	top: calc(50% - 80px);
+
+	&:before {
+		content: "CAUTION";
+		font-size: 24px;
+		display: block;
+		color: $cube-color;
+		background: #666;
+	}
+}
+
+.fragile-box {
+	border-top: 5px solid;
+	margin: 0 10px;
+	border-bottom: 5px solid;
+	padding: 2px;
+
+	&:before, &:after {
+		display: block;
+		line-height: 1.1em;
+	}
+
+	&:before {
+		content: "FRAGILE";
+		font-size: 40px;
+	}
+
+	&:after {
+		content: "HANDLE WITH CARE";
+		font-size: 21px;
 	}
 }

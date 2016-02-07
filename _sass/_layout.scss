@@ -162,6 +162,8 @@
  */
 .page-content {
 	padding: $spacing-unit 0;
+	min-height: 100vh;
+	background: rgba(250, 248, 61, 0.8);
 }
 
 .page-heading {
@@ -228,6 +230,10 @@
 
 		@include media-query($on-laptop) {
 			font-size: 18px;
+		}
+
+		span {
+			color: #333;
 		}
 	}
 }

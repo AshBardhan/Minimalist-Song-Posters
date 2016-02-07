@@ -7,12 +7,20 @@
 
 	<div class="post-content-wrap">
 		<article class="post-content">
-			<header class="post-header">
+			<!--<header class="post-header">
 				<p class="post-meta">{{ include.post.date | date: "%b %-d, %Y" }}{% if author != null %} • <a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a>{% endif %}{% if include.post.meta %} • {{ include.post.meta }}{% endif %}</p>
-			</header>
-			{{ include.post.content }}
+			</header>-->
+			<h2 class="post-song__heading">{{ include.post.title }}</h2>
+			<div class="post-song__content">
+				{{ include.post.content }}
+			</div>
+			<h4 class="post-song__heading">
+				<span>Posted by </span>
+				{% if author != null %}<a href="https://twitter.com/{{ author.twitter }}">@{{ author.twitter }}</a>{% else %}Anonymous{% endif %}
+				<span> on </span>
+				{{ include.post.date | date: "%b %-d, %Y" }}
+			</h4>
  		</article>
-		<div class="post-content__image"></div>
 	</div>
 
 	<a class="nav-btns  nav-btns--left  {% if include.post.previous == nil %}disabled{% endif %}" href="{{ include.post.previous.url | prepend: site.baseurl }}"><</a>
