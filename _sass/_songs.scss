@@ -4,6 +4,7 @@
 
 $cube-size: 250px;
 $cube-tape-size: 50px;
+$cube-tape-color: #A28661;
 
 .cube {
 	position: relative;
@@ -17,8 +18,9 @@ $cube-tape-size: 50px;
 	position: absolute;
 	width: $cube-size;
 	height: $cube-size;
-	background: #e1875f;
-	box-shadow: inset 5px 5px 50px #a56b3e;
+	background: #C7A172;
+	//box-shadow: inset 5px 5px 50px #d4ba76;
+	border: 2px solid #B5926D;
 	color: #666;
 	font-family: Impact;
 	font-size: 30px;
@@ -42,7 +44,7 @@ $cube-tape-size: 50px;
 		height: $cube-tape-size;
 		left: calc(50% - 25px);
 		top: 0;
-		background: #EA9C5F;
+		background: $cube-tape-color;
 	}
 }
 
@@ -55,14 +57,18 @@ $cube-tape-size: 50px;
 	transform: rotateX(-90deg) translateY(-$cube-size / 2);
 	transform-origin: top center;
 
-	&:before {
+	&:before, &:after {
 		content: "";
 		position: absolute;
 		width: 100%;
 		height: $cube-tape-size;
 		top: calc(50% -  #{$cube-tape-size}/2);
 		left: 0;
-		background: #EA9C5F;
+		background: $cube-tape-color;
+	}
+
+	&:after {
+		transform: rotateZ(90deg);
 	}
 }
 
@@ -74,6 +80,16 @@ $cube-tape-size: 50px;
 .front {
 	transform: translateZ($cube-size / 2);
 	padding-top: 200px;
+
+	&:before {
+		content: "";
+		position: absolute;
+		width: $cube-tape-size;
+		height: $cube-tape-size;
+		left: calc(50% - 25px);
+		top: 0;
+		background: $cube-tape-color;
+	}
 }
 
 @keyframes spin {
