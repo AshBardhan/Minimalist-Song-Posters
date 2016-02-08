@@ -195,6 +195,7 @@ $card-color: #666;
 	height: $card-height;
 	position: relative;
 	margin: 0 auto;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .card__front, .card__back {
@@ -217,6 +218,48 @@ $card-color: #666;
 	animation: 3s anim-rotate--card__back linear infinite;
 	background: url("../images/lemmy.jpg") no-repeat center;
 	background-size: cover;
+}
+
+.card__main-content {
+	font-size: 200px;
+	position: absolute;
+	line-height: 200px;
+	top: calc(50% - 100px);
+	left: 0;
+	right: 0;
+}
+
+.card__mini-content {
+	font-size: 30px;
+	line-height: 30px;
+	position: absolute;
+
+	&:before {
+		content: 'A';
+		display: block;
+		line-height: 20px;
+		font-size: 20px;
+	}
+
+	&:first-child {
+		left: 10px;
+		top: 10px;
+	}
+
+	&:last-child {
+		right: 10px;
+		bottom: 10px;
+		transform: rotateZ(180deg);
+	}
+}
+
+.card__back-content {
+	color: #fff;
+	font-size: 30px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 @keyframes anim-rotate--card__front {
