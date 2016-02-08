@@ -23,8 +23,8 @@
  		</article>
 	</div>
 
-	<a class="nav-btns  nav-btns--left  {% if include.post.previous == nil %}disabled{% endif %}" href="{{ include.post.previous.url | prepend: site.baseurl }}"><</a>
-	<a class="nav-btns  nav-btns--right  {% if include.post.next == nil %}disabled{% endif %}" href="{{ include.post.next.url | prepend: site.baseurl }}">></a>
+	<a class="nav-btns  nav-btns--left  {% if include.post.previous == nil %}disabled{% endif %}" href="{{ include.post.previous.url | prepend: site.baseurl }}" title="Previous Song"><</a>
+	<a class="nav-btns  nav-btns--right  {% if include.post.next == nil %}disabled{% endif %}" href="{{ include.post.next.url | prepend: site.baseurl }}" title="New Song">></a>
 
 	<script>
 	window.urls = {
