@@ -1,0 +1,86 @@
+$stick-figure: 280px;
+$cube-tape-size: 50px;
+
+$cube-color: #C7A172;
+$cube-tape-color: #A28661;
+
+.stick {
+	width: 40px;
+	height: 80px;
+	border-radius: 10px;
+	background: black;
+	position: relative;
+
+	&--blue {
+		background: blue;
+	}
+
+	&--yellow {
+		background: yellow;
+	}
+}
+
+.stick__head {
+	width: 40px;
+	height: 40px;
+	background: inherit;
+	border-radius: 50%;
+	position: absolute;
+	top: -40px;
+	//animation: headbang 0.3s linear 0s infinite;
+	left: calc(50% - 20px);
+}
+
+@keyframes headbang {
+	from {
+		top: -40px;
+	}
+	50% {
+		top: -20px;
+	}
+	to {
+		top: -40px;
+	}
+}
+
+.stick__leg {
+	border-radius: inherit;
+	background: inherit;
+	width: 15px;
+	height: 80px;
+	position: absolute;
+	transition: all 2s;
+	bottom: -70px;
+	transform-origin: 50% 5%;
+
+	&--left {
+		left: 0;
+		transform: rotate(5deg);
+	}
+
+	&--right {
+		right: 0;
+		transform: rotate(-5deg);
+	}
+}
+
+.stick__arm {
+	border-radius: inherit;
+	background: inherit;
+	width: 15px;
+	height: 60px;
+	position: absolute;
+	transition: all 2s;
+	top: 5px;
+	transform-origin: 50% 5%;
+
+	&--left {
+		left: -5px;
+		transform: rotate(20deg);
+	}
+
+	&--right {
+		right: -5px;
+		transform: rotate(-20deg);
+	}
+}
