@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Styleguide
+category: hidden
 permalink: /styleguide/
 ---
 
